@@ -6,11 +6,11 @@
       if (edit.length > 0) {
         if ($('#update .edit_issue .box > fieldset.tabular').length > 0)
         {
-          // コメントのソートに合わせて編集エリアの位置を調整
+          // Adjust the position of the edit area to match the sorting of the comments
           var reverseOrder = <%= User.current.wants_comments_in_reverse_order? %>;
           if (reverseOrder) $('#update').prependTo($('history'));
           
-          // 返信ボタンの作成
+          // Create reply button
           $('<a>', {
             'class': 'icon icon-reply',
             text: '<%= escape_javascript(l(:button_reply)) %>',
@@ -44,7 +44,7 @@
             }
             else
             {
-              // なぜか2回やらないとクリアできなかった
+              // For some reason I had to do it twice to clear it.
               $("#issue_assigned_to_id").select2().val(null).trigger("change");
               $("#issue_assigned_to_id").select2().val(null).trigger("change");
             }
