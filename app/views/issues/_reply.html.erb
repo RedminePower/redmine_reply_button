@@ -1,0 +1,65 @@
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    $('#content > .contextual').each(function () {
+
+      var edit = $(this).find('.icon-edit');
+      if (edit.length > 0) {
+        if ($('#update .edit_issue .box > fieldset.tabular').length > 0)
+        {
+          // コメントのソートに合わせて編集エリアの位置を調整
+          var reverseOrder = <%= User.current.wants_comments_in_reverse_order? %>;
+          if (reverseOrder) $('#update').prependTo($('history'));
+          
+          // 返信ボタンの作成
+          $('<a>', {
+            'class': 'icon icon-reply',
+            text: '<%= escape_javascript(l(:button_reply)) %>',
+            href: '<%= edit_issue_path(@issue) %>',
+            click: function()
+            {
+              var journals = $(".journal").sort(function(a,b)
+              {
+                if      (a.id < b.id) return 1;
+                else if (a.id > b.id) return -1;
+                else                  return 0;
+              });
+              
+              var userId = (journals.length > 0) ?
+                $("#" + journals[0].id).find(".user.active")[0].href.split("/").slice(-1)[0] :
+                S(".author").find(".user.active")[0].href.split("/").slice(-1)[0];
+              $("#issue_assigned_to_id").select2().val([userId]).trigger("change");
+              $('#update .edit_issue .box > fieldset.tabular').show();
+              showAndScrollTo('update', 'issue_notes');
+              return false;
+            }
+          }).prependTo($(this));
+          
+          edit.click(function ()
+          {
+            var users = $(".assigned-to").find(".user");
+            if (users.length > 0)
+            {
+              var userId = users[0].href.split("/").slice(-1)[0];
+              $("#issue_assigned_to_id").select2().val([userId]).trigger("change");
+            }
+            else
+            {
+              // なぜか2回やらないとクリアできなかった
+              $("#issue_assigned_to_id").select2().val(null).trigger("change");
+              $("#issue_assigned_to_id").select2().val(null).trigger("change");
+            }
+            
+            $('#update .edit_issue .box > fieldset.tabular').show();
+            showAndScrollTo('update', 'issue_notes');
+            return false;
+          });
+          
+        }
+        else
+        {
+          edit.text('<%= escape_javascript(l(:button_reply)) %>').removeClass('icon-edit').addClass('icon-reply');
+        }
+      }
+    });
+  });
+<% end %>
