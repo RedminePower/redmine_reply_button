@@ -12,8 +12,8 @@ Place the plugin source at Redmine plugins directory.
 `plugins/redmine_reply_button` on your Redmine installation path.
 
 ```
-$cd /var/lib/redmine/plugins
-$git clone https://github.com/SabastianGambrell/redmine_reply_button
+$ cd /var/lib/redmine/plugins
+$ git clone https://github.com/SabastianGambrell/redmine_reply_button
 ```
 
 ## How to activate the Issues Panel
