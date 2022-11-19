@@ -27,7 +27,7 @@
               var userId = (journals.length > 0) ?
                 $("#" + journals[0].id).find(".user.active")[0].href.split("/").slice(-1)[0] :
                 S(".author").find(".user.active")[0].href.split("/").slice(-1)[0];
-              $("#issue_assigned_to_id").select2().val([userId]).trigger("change");
+              $("#issue_assigned_to_id").val([userId]).trigger("change");
               $('#update .edit_issue .box > fieldset.tabular').show();
               showAndScrollTo('update', 'issue_notes');
               return false;
@@ -40,13 +40,13 @@
             if (users.length > 0)
             {
               var userId = users[0].href.split("/").slice(-1)[0];
-              $("#issue_assigned_to_id").select2().val([userId]).trigger("change");
+              $("#issue_assigned_to_id").val([userId]).trigger("change");
             }
             else
             {
               // For some reason I had to do it twice to clear it.
-              $("#issue_assigned_to_id").select2().val(null).trigger("change");
-              $("#issue_assigned_to_id").select2().val(null).trigger("change");
+              $("#issue_assigned_to_id").val(null).trigger("change");
+              $("#issue_assigned_to_id").val(null).trigger("change");
             }
             
             $('#update .edit_issue .box > fieldset.tabular').show();
