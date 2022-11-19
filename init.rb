@@ -9,7 +9,7 @@ Redmine::Plugin.register :redmine_reply_button do
     author 'SabastianGambrell'
     description 'Add "Reply" button to the action menu of the issue page.'
     url 'https://github.com/SabastianGambrell/redmine_reply_button'
-    version '1.0.0'
+    version '1.1.0'
     
     project_module :issue_reply_button do
         permission :issue_reply_button, :issue_reply_button => [:index]
