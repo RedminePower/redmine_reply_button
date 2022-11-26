@@ -4,7 +4,7 @@
 
 - チケットに返信ボタンを追加するプラグインです。チケット駆動型の開発に便利です。
 
-![image](https://user-images.githubusercontent.com/115391518/194808276-6ba1eaa2-67d0-47fa-b3d2-fa1de7f284d6.png)
+![image](https://user-images.githubusercontent.com/87136359/204088971-53041413-1a99-4bf3-9a6b-82127d52df35.png)
 
 ## インストール
 
@@ -17,7 +17,7 @@ $ git clone https://github.com/SabastianGambrell/redmine_reply_button
 ## 有効化方法
 - Project->Settings->Modulesの「Reply button」にチェックを入れ、保存します。
 
-![image](https://user-images.githubusercontent.com/115391518/194808119-83ecad95-5fcc-4d0b-b6e5-d04a56478ad2.png)
+![image](https://user-images.githubusercontent.com/87136359/204088998-ca6e4e57-f580-479a-a86b-c8a9c1c807cd.png)
 
 ## アンインストール
 - プラグインディレクトリを削除します。
