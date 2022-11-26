@@ -6,6 +6,10 @@
 
 ![image](https://user-images.githubusercontent.com/87136359/204088971-53041413-1a99-4bf3-9a6b-82127d52df35.png)
 
+## 対応Redmine
+- V5.x (V5.0.3にて動作確認済み)
+- V4.x (V4.2.3にて動作確認済み)
+
 ## インストール
 
 - プラグインソースをRedmineのpluginsディレクトリに配置します。
