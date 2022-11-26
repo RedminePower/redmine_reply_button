@@ -19,7 +19,7 @@ $ git clone https://github.com/SabastianGambrell/redmine_reply_button
 
 - Check the 'Reply Button' checkbox on the Project->Settings->Modules and save it.
 
-![image](https://user-images.githubusercontent.com/115391518/194808119-83ecad95-5fcc-4d0b-b6e5-d04a56478ad2.png)
+![image](https://user-images.githubusercontent.com/87136359/204089074-24e2fdb7-08ea-4844-886e-994475c440c8.png)
 
 ## Uninstall
 
