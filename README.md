@@ -19,7 +19,7 @@ $ cd /var/lib/redmine/plugins
 $ git clone https://github.com/SabastianGambrell/redmine_reply_button
 ```
 
-## How to activate the Issues Panel
+## How to activate
 
 - Check the 'Reply Button' checkbox on the Project->Settings->Modules and save it.
 
