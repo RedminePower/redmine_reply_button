@@ -6,6 +6,10 @@
 
 ![image](https://user-images.githubusercontent.com/115391518/194808276-6ba1eaa2-67d0-47fa-b3d2-fa1de7f284d6.png)
 
+## Supported Redmine
+- V5.x.x (Tested by V5.0.3)
+- V4.x.x (Tested by V4.2.3)
+
 ## Install
 
 - Place the plugin source at Redmine plugins directory.
