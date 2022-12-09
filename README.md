@@ -16,7 +16,7 @@
 
 ```
 $ cd /var/lib/redmine/plugins
-$ git clone https://github.com/SabastianGambrell/redmine_reply_button
+$ git clone https://github.com/RedminePower/redmine_reply_button
 ```
 
 ## How to activate
