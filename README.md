@@ -2,7 +2,12 @@
 
 ## Features
 
-- This plugin adds a Reply button to tickets. It is useful for ticket-driven development.
+- This plugin adds a Reply button to tickets.
+- You can change the last updated person to be in charge and start editing.
+- It can be used like replying by e-mail.
+- It is useful for ticket-driven development.
+- It is more convenient when used with Redmine Time Puncher.
+- https://www.en.redmine-power.com/
 
 ![image](https://user-images.githubusercontent.com/115391518/194808276-6ba1eaa2-67d0-47fa-b3d2-fa1de7f284d6.png)
 
