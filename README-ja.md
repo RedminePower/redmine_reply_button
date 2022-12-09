@@ -16,7 +16,7 @@
 
 ```
 $ cd /var/lib/redmine/plugins
-$ git clone https://github.com/SabastianGambrell/redmine_reply_button
+$ git clone https://github.com/RedminePower/redmine_reply_button
 ```
 ## 有効化方法
 - 各プロジェクトの「設定」-「モジュール」の「Reply button」にチェックを入れ、保存します。
