@@ -2,6 +2,8 @@
 
 ## Features
 
+For more information, please click [here](https://www.redmine-power.com/plugins/reply_button/).
+
 - This plugin adds a Reply button to tickets.
 - You can change the last updated person to be in charge and start editing.
 - It can be used like replying by e-mail.
