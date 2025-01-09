@@ -26,7 +26,7 @@
               
               var userId = (journals.length > 0) ?
                 $("#" + journals[0].id).find(".user.active")[0].href.split("/").slice(-1)[0] :
-                S(".author").find(".user.active")[0].href.split("/").slice(-1)[0];
+                $(".author").find(".user.active")[0].href.split("/").slice(-1)[0];
               $("#issue_assigned_to_id").val([userId]).trigger("change");
               $('#update .edit_issue .box > fieldset.tabular').show();
               showAndScrollTo('update', 'issue_notes');
