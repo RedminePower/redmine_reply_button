@@ -36,13 +36,16 @@
           
           edit.click(function ()
           {
-            var users = $(".assigned-to").find(".user");
-            if (users.length > 0)
-            {
-              var userId = users[0].href.split("/").slice(-1)[0];
-              $("#issue_assigned_to_id").val([userId]).trigger("change");
+            var assignees = $(".assigned-to").find(".user, .group");
+            if (assignees.length > 0)
+             {
+              var assigneeId = assignees[0].href.match(/\/(users|groups)\/(\d+)$/);
+              if (assigneeId)
+              {
+                $("#issue_assigned_to_id").val([assigneeId[2]]).trigger("change");
+              }
             }
-            else
+             else
             {
               // For some reason I had to do it twice to clear it.
               $("#issue_assigned_to_id").val(null).trigger("change");
