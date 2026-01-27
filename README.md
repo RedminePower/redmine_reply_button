@@ -14,7 +14,8 @@ For more information, please click [here](https://www.redmine-power.com/plugins/
 ![image](https://user-images.githubusercontent.com/115391518/194808276-6ba1eaa2-67d0-47fa-b3d2-fa1de7f284d6.png)
 
 ## Supported Redmine
-- V5.x.x (Tested by V5.0.3)
+- V6.x.x (Tested by V6.1.1)
+- V5.x.x (Tested by V5.0.3, V5.1.11)
 - V4.x.x (Tested by V4.2.3)
 
 ## Install
