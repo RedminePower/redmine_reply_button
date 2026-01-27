@@ -1,65 +1,72 @@
 <%= javascript_tag do %>
   $(document).ready(function() {
-    $('#content > .contextual').each(function () {
-
+    $('#content > .contextual').each(function() {
       var edit = $(this).find('.icon-edit');
       if (edit.length > 0) {
-        if ($('#update .edit_issue .box > fieldset.tabular').length > 0)
-        {
+        if ($('#update .edit_issue .box > fieldset.tabular').length > 0) {
           // Adjust the position of the edit area to match the sorting of the comments
           var reverseOrder = <%= User.current.wants_comments_in_reverse_order? %>;
-          if (reverseOrder) $('#update').prependTo($('history'));
-          
+          if (reverseOrder) {
+            $('#update').prependTo($('#history'));
+          }
+
           // Create reply button
           $('<a>', {
             'class': 'icon icon-reply',
             text: '<%= escape_javascript(l(:button_reply)) %>',
             href: '<%= edit_issue_path(@issue) %>',
-            click: function()
-            {
-              var journals = $(".journal").sort(function(a,b)
-              {
-                if      (a.id < b.id) return 1;
-                else if (a.id > b.id) return -1;
-                else                  return 0;
-              });
-              
-              var userId = (journals.length > 0) ?
-                $("#" + journals[0].id).find(".user.active")[0].href.split("/").slice(-1)[0] :
-                $(".author").find(".user.active")[0].href.split("/").slice(-1)[0];
-              $("#issue_assigned_to_id").val([userId]).trigger("change");
+            click: function() {
+              // Get the latest journal
+              var latestJournal = $(".journal").toArray().reduce(function(latest, current) {
+                if (!latest) return current;
+                var latestId = parseInt(latest.id.replace(/\D/g, ''), 10);
+                var currentId = parseInt(current.id.replace(/\D/g, ''), 10);
+                return currentId > latestId ? current : latest;
+              }, null);
+              var userElement = null;
+
+              // Find the author of the latest journal if exists
+              if (latestJournal) {
+                userElement = $("#" + latestJournal.id).find(".user.active");
+              }
+
+              // Fall back to the issue author if not found
+              if (!userElement || userElement.length === 0) {
+                userElement = $(".author").find(".user.active");
+              }
+
+              if (userElement && userElement.length > 0) {
+                var match = userElement[0].href.match(/\/users\/(\d+)$/);
+                if (match) {
+                  $("#issue_assigned_to_id").val([match[1]]).trigger("change");
+                }
+              }
+
               $('#update .edit_issue .box > fieldset.tabular').show();
               showAndScrollTo('update', 'issue_notes');
               return false;
             }
           }).prependTo($(this));
-          
-          edit.click(function ()
-          {
+
+          edit.click(function() {
             var assignees = $(".assigned-to").find(".user, .group");
-            if (assignees.length > 0)
-             {
+            if (assignees.length > 0) {
               var assigneeId = assignees[0].href.match(/\/(users|groups)\/(\d+)$/);
-              if (assigneeId)
-              {
+              if (assigneeId) {
                 $("#issue_assigned_to_id").val([assigneeId[2]]).trigger("change");
               }
-            }
-             else
-            {
+            } else {
               // For some reason I had to do it twice to clear it.
               $("#issue_assigned_to_id").val(null).trigger("change");
               $("#issue_assigned_to_id").val(null).trigger("change");
             }
-            
+
             $('#update .edit_issue .box > fieldset.tabular').show();
             showAndScrollTo('update', 'issue_notes');
             return false;
           });
-          
-        }
-        else
-        {
+
+        } else {
           edit.text('<%= escape_javascript(l(:button_reply)) %>').removeClass('icon-edit').addClass('icon-reply');
         }
       }
