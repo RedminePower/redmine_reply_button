@@ -20,7 +20,17 @@ For more information, please click [here](https://www.redmine-power.com/plugins/
 
 ## Install
 
-- Place the plugin source at Redmine plugins directory.
+The Redmine installation path varies depending on your environment.
+The following instructions use `/var/lib/redmine`.
+Please adjust according to your environment.
+
+| Environment | Redmine Path |
+|-------------|--------------|
+| apt (Debian/Ubuntu) | `/var/lib/redmine` |
+| Docker (Official Image) | `/usr/src/redmine` |
+| Bitnami | `/opt/bitnami/redmine` |
+
+Place the plugin source at Redmine plugins directory.
 
 ```
 $ cd /var/lib/redmine/plugins
