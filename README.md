@@ -1,7 +1,9 @@
 # redmine_reply_button
 
-> **Tip**: [redmine_studio_plugin](https://github.com/RedminePower/redmine_studio_plugin) を使うと、この機能を含む複数の便利な機能をまとめて管理できます。
-> また、[Redmine Studio](https://www.redmine-power.com/) と組み合わせると、より快適に Redmine をお使いいただけます。
+> [!Tip]
+> [redmine_studio_plugin](https://github.com/RedminePower/redmine_studio_plugin) をご利用いただければ、この機能を含む複数の便利な機能をまとめて管理できます。
+>
+> また、[Redmine Studio](https://www.redmine-power.com/) アプリと組み合わせることで、より快適に Redmine をお使いいただけます。
 
 ## 概要
 
