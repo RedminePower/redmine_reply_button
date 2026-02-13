@@ -8,6 +8,8 @@
 A plugin that adds a "Reply" button to issues.
 Clicking the button automatically sets the last commenter as the assignee, enabling email-like exchanges on issues.
 
+<img src="images/reply_button_01.png" width="600">
+
 For details, see [here](https://github.com/RedminePower/redmine_studio_plugin/blob/master/docs/reply_button-en.md).
 
 ## Supported Versions

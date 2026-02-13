@@ -8,6 +8,8 @@
 チケットに「返答」ボタンを追加するプラグインです。
 ボタンをクリックすると最終コメント投稿者が担当者に自動設定され、メールで返信する要領でチケット上でやり取りができます。
 
+<img src="images/reply_button_01.png" width="600">
+
 詳細は [こちら](https://github.com/RedminePower/redmine_studio_plugin/blob/master/docs/reply_button.md) をご覧ください。
 
 ## 対応バージョン
